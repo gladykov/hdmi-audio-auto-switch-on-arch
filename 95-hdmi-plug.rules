@@ -1,1 +1,1 @@
-ACTION=="change", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/{USERNAME}/.Xauthority", RUN+="/usr/bin/su {USERNAME} -c /path/to/script/hdmi.sh"
+ACTION=="change", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/{USERNAME}/.Xauthority", RUN+="/usr/bin/su {USERNAME} -c 'echo  /path/to/script/hdmi.sh | at now'"
