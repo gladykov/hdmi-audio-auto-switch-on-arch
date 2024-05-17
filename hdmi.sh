@@ -6,7 +6,7 @@ export DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"
 export XDG_RUNTIME_DIR="/run/user/1000"
 
 # Wait for Udev worker to finish processing all events
-sleep 5
+sleep 3
 
 if pactl list | grep "available: yes" | grep hdmi
     then
