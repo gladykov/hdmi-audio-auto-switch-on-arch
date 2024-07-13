@@ -8,7 +8,8 @@ export XDG_RUNTIME_DIR="/run/user/1000"
 # Wait for Udev worker to finish processing all events
 sleep 3
 
-if pactl list | grep "available: yes" | grep hdmi
+# HDMI AC3 profiles are available when HDMI is disconnected
+if pactl list | grep "available: yes" | grep hdmi | grep AC3 -v
     then
     echo "HDMI connected"
     pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo+input:analog-stereo
