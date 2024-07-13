@@ -9,6 +9,9 @@ export XDG_RUNTIME_DIR="/run/user/1000"
 sleep 3
 
 # HDMI AC3 profiles are available when HDMI is disconnected
+# More general way of detecting plugged-in HDMI could be:
+# xrandr | grep 'connected' | grep 'HDMI'
+# but it is not compatible with Wayland
 if pactl list | grep "available: yes" | grep hdmi | grep AC3 -v
     then
     echo "HDMI connected"
