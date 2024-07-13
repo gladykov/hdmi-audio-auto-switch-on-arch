@@ -7,6 +7,7 @@ When you disconnect HDMI you want to go back to laptop speakers.
 
 But sometimes it is broken.
 
+This is why udev rule and sh script. Make sure to update your username and paths in sh script and udev rule
 
 Requierements:
 ```
@@ -14,6 +15,8 @@ paru -S at
 systemctl enable atd.service --now
 ```
 because when udev rule is running, it will not update `pactl` info, so we need to schedule delayed task in background.
+
+
 
 Stuff:
 
